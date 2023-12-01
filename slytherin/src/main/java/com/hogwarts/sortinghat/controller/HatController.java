@@ -13,7 +13,7 @@ public class HatController {
     @GetMapping("/hat")
     public ResponseEntity<String> getHat()
     {
-        return ResponseEntity.ok("Gryffindor!");
+        return ResponseEntity.ok("Hufflepuff!");
     }
 
 }
