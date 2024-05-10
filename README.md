@@ -1,7 +1,8 @@
-# The Booking.com Sorting Hat #
-The focus of this exercise is to practise Mobbing.
-![](houses)
+# The Booking Sorting Hat #
 
+The focus of this exercise is to practise Mobbing.
+
+![](houses)
 
 
 ## Rules: ##
