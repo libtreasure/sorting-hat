@@ -1,6 +1,6 @@
 # The Booking.com Sorting Hat #
 The focus of this exercise is to practise Mobbing.
-![](MarkDownImages/)
+![](houses)
 
 
 
