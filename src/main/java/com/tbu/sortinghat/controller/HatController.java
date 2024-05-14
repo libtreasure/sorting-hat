@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/v1")
 @RestController
 @RequiredArgsConstructor
-@CrossOrigin
 public class HatController {
 
     private final HatService hatService;
