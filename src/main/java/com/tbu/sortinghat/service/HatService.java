@@ -14,7 +14,11 @@ public class HatService {
         nameMap.put(2,"Gryffinsure");
         nameMap.put(3,"Slythcarin");
         name = name.toLowerCase();
-        String houseName = "";
+        String houseName;
+        String result;
+        if(name.equalsIgnoreCase("tom") || name.equalsIgnoreCase("voldemort")) {
+            return "Dark Lords are not permitted to work here!";
+        }
         int randomNum = (int)(Math.random() * 3);
         System.out.println(randomNum);
         if(name.startsWith("h")){
@@ -23,6 +27,7 @@ public class HatService {
             houseName = nameMap.get(randomNum);
         }
         System.out.println(houseName);
-        return houseName;
+        result = "Hi " + name + " you are in " + houseName;
+        return result;
     }
 }

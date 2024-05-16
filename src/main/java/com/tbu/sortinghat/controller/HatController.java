@@ -17,7 +17,8 @@ public class HatController {
 
         String result = hatService.getHouse(name);
         System.out.println("in controller,"+result);
-        return ResponseEntity.ok("Hi " + name + " you are in " + result);
+
+        return ResponseEntity.ok(result);
     }
 
 }
