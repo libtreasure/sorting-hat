@@ -13,10 +13,15 @@ public class HatService {
         nameMap.put(1,"Ridesclaw");
         nameMap.put(2,"Gryffinsure");
         nameMap.put(3,"Slythcarin");
-
+        name = name.toLowerCase();
+        String houseName = "";
         int randomNum = (int)(Math.random() * 3);
         System.out.println(randomNum);
-        String houseName = nameMap.get(randomNum);
+        if(name.startsWith("h")){
+            houseName = nameMap.get(2);
+        } else {
+            houseName = nameMap.get(randomNum);
+        }
         System.out.println(houseName);
         return houseName;
     }
