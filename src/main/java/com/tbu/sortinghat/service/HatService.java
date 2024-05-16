@@ -19,6 +19,7 @@ public class HatService {
         if(Objects.isNull(names) || names.length == 0 || Strings.isEmpty(names[0])) {
             return "No name provided";
         }
+
         String house;
         String firstName = names[0];
         String lastName = names.length == 2 ? names[1] : null;
@@ -27,14 +28,20 @@ public class HatService {
         } else if (darkLords.contains(firstName)){
             return "Dark Lords are not permitted to work here!";
         } else {
-            if (Objects.nonNull(lastName) && personHouseMap.containsKey(lastName)) {
-                house = personHouseMap.get(lastName);
-            } else {
-                int index = (int) Math.floor(Math.random() * 4);
-                house = options.get(index);
-                personHouseMap.put(lastName, house);
-            }
+            house = getRandomHouse(lastName);
         }
         return String.format("%s, you are in %s!", firstName, house);
+    }
+
+    private String getRandomHouse(String lastName) {
+        String house;
+        if (Objects.nonNull(lastName) && personHouseMap.containsKey(lastName)) {
+            house = personHouseMap.get(lastName);
+        } else {
+            int index = (int) Math.floor(Math.random() * 4);
+            house = options.get(index);
+            personHouseMap.put(lastName, house);
+        }
+        return house;
     }
 }
