@@ -26,4 +26,12 @@ public class HatController {
 
         return ResponseEntity.ok(result);
     }
+
+    @GetMapping("/members/{house}")
+    public ResponseEntity<String> getHouseMembers(@PathVariable String house){
+        String result = hatService.getHouseNames(house);
+
+        return ResponseEntity.ok(result);
+    }
+
 }

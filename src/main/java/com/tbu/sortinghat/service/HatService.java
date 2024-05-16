@@ -3,9 +3,7 @@ package com.tbu.sortinghat.service;
 import org.apache.logging.log4j.util.Strings;
 import org.springframework.stereotype.Service;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 @Service
 public class HatService {
@@ -13,6 +11,7 @@ public class HatService {
     static final List<String> options = List.of("Hotelpuff", "Ridesclaw", gryffinsure, "Slythcarin");
     static final List<String> darkLords = List.of("Tom", "Voldemort");
 
+    HashMap<String, Set<String>> houseMembers = new HashMap<>();
     HashMap<String, String> personHouseMap = new HashMap<>();
 
     public String getHouse(String... names) {
@@ -30,7 +29,29 @@ public class HatService {
         } else {
             house = getRandomHouse(lastName);
         }
+
+        populateHouseMembers(house, firstName, lastName);
         return String.format("%s, you are in %s!", firstName, house);
+    }
+
+    public String getHouseNames(String house) {
+        Set<String> members = houseMembers.get(house);
+        if (Objects.isNull(members)) {
+            return "No members";
+        } else {
+            return members.toString();
+        }
+    }
+
+    private void populateHouseMembers(String house, String firstName, String lastName) {;
+        String member = Objects.isNull(lastName) ? String.format("%s", firstName) : String.format("%s %s", firstName, lastName);
+        if (houseMembers.containsKey(house)) {
+            houseMembers.get(house).add(member);
+        } else {
+            HashSet<String> members = new HashSet<>();
+            members.add(member);
+            houseMembers.put(house, members);
+        }
     }
 
     private String getRandomHouse(String lastName) {
