@@ -11,7 +11,7 @@ public class HatService {
     static final List<String> darkLords = List.of("Tom", "Voldemort");
 
     public String getHouse(String name) {
-        String house = "";
+        String house;
         if (name.toLowerCase().charAt(0) == 'h') {
             house = options.get(2);
         } else if (darkLords.contains(name)){
