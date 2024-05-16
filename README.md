@@ -78,7 +78,7 @@ The CEO wants to be able to see which employees belong to each house.
 ```
 input: "Gryffinsure"
 
-output: "Ron Weasley", Ginny Weasley", "Harry Potter"
+output: "Ron Weasley", "Ginny Weasley", "Harry Potter"
 ```
 ## Resources ##
 
