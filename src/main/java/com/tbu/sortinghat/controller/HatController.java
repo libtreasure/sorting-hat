@@ -16,6 +16,7 @@ public class HatController {
     public ResponseEntity<String> getHouse(@PathVariable String name){
 
         String result = hatService.getHouse(name);
+        System.out.println("in controller,"+result);
 
         return ResponseEntity.ok(result);
     }
